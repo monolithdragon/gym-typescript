@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Home from "view/home";
 import Navbar from "./components/navbar";
 import { SelectedPage } from "./shared/types";
 
@@ -32,6 +33,7 @@ function App() {
         setSelectedPage={setSelectedPage}
         isTopOfPage={isTopOfPage}
       />
+      <Home setSelectedPage={setSelectedPage} />
     </div>
   );
 }
