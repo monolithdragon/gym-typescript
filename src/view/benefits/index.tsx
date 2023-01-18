@@ -1,35 +1,10 @@
 import { BenefitType, SelectedPage } from "shared/types";
-import {
-  HomeModernIcon,
-  UserGroupIcon,
-  AcademicCapIcon,
-} from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Heading from "components/ui/Heading";
 import Benefit from "./Benefit";
 import ActionButton from "components/ui/actionButton";
 import BenefitsPageGraphic from "assets/BenefitsPageGraphic.png";
-
-const benefits: Array<BenefitType> = [
-  {
-    icon: <HomeModernIcon className="h-6 w-6" />,
-    title: "State of the Art Facilities",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aut aliquid quas eius molestias nam natus perferendis cumque atque dolorem.",
-  },
-  {
-    icon: <UserGroupIcon className="h-6 w-6" />,
-    title: "100's of Diverse Classes",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia provident quos obcaecati nisi! Reiciendis odit tenetur, rerum nostrum fugiat distinctio.",
-  },
-  {
-    icon: <AcademicCapIcon className="h-6 w-6" />,
-    title: "Expert and Pro Trainers",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ipsum cupiditate maxime nulla quibusdam error. Aliquid voluptate quia sapiente omnis.",
-  },
-];
+import benefitTypes from "./benefitTypes";
 
 const container = {
   hidden: {},
@@ -78,7 +53,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
           viewport={{ once: true, amount: 0.5 }}
           variants={container}
         >
-          {benefits.map((benefit: BenefitType) => (
+          {benefitTypes.map((benefit: BenefitType) => (
             <Benefit
               key={benefit.title}
               icon={benefit.icon}
