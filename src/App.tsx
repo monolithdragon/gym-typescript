@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Benefits from "view/benefits";
 import ContactUs from "view/contactUs";
+import Footer from "view/Footer";
 import Home from "view/home";
 import OurClasses from "view/ourClasses";
 import Navbar from "./components/navbar";
@@ -40,6 +41,7 @@ function App() {
       <Benefits setSelectedPage={setSelectedPage} />
       <OurClasses setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage} />
+      <Footer />
     </div>
   );
 }
