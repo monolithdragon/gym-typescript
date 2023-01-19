@@ -1,3 +1,4 @@
+import { SelectedPageContext } from "contexts/SelectedPageContext";
 import { useEffect, useState } from "react";
 import Benefits from "view/benefits";
 import ContactUs from "view/contactUs";
@@ -31,18 +32,16 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-gray-20">
-      <Navbar
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-        isTopOfPage={isTopOfPage}
-      />
-      <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <OurClasses setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
-      <Footer />
-    </div>
+    <SelectedPageContext.Provider value={{ selectedPage, setSelectedPage }}>
+      <div className="app bg-gray-20">
+        <Navbar isTopOfPage={isTopOfPage} />
+        <Home />
+        <Benefits />
+        <OurClasses />
+        <ContactUs />
+        <Footer />
+      </div>
+    </SelectedPageContext.Provider>
   );
 }
 

@@ -5,6 +5,8 @@ import Benefit from "./Benefit";
 import ActionButton from "components/ui/actionButton";
 import BenefitsPageGraphic from "assets/BenefitsPageGraphic.png";
 import benefitTypes from "./benefitTypes";
+import { SelectedPageContext } from "contexts/SelectedPageContext";
+import { useContext } from "react";
 
 const container = {
   hidden: {},
@@ -15,11 +17,8 @@ const container = {
   },
 };
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Benefits = ({ setSelectedPage }: Props) => {
+const Benefits = () => {
+  const { setSelectedPage } = useContext(SelectedPageContext);
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
       <motion.div

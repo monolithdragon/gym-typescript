@@ -5,14 +5,17 @@ import { SelectedPage } from "shared/types";
 import useMediaQuery from "hooks/useMediaQuery";
 import ActionButton from "components/ui/actionButton";
 import useToggle from "hooks/useToggle";
+import { useContext } from "react";
+import { SelectedPageContext } from "contexts/SelectedPageContext";
 
 type Props = {
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
+  // selectedPage: SelectedPage;
+  // setSelectedPage: (value: SelectedPage) => void;
   isTopOfPage: boolean;
 };
 
-const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
+  const { selectedPage, setSelectedPage } = useContext(SelectedPageContext);
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [value, isToggle] = useToggle(false);

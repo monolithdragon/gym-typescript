@@ -8,12 +8,11 @@ import SponsorFortune from "assets/SponsorFortune.png";
 import SponsorRedBull from "assets/SponsorRedBull.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { SelectedPageContext } from "contexts/SelectedPageContext";
+import { useContext } from "react";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Home = ({ setSelectedPage }: Props) => {
+const Home = () => {
+  const { setSelectedPage } = useContext(SelectedPageContext);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (

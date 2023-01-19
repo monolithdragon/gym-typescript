@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from "assets/ContactUsPageGraphic.png";
 import Heading from "components/ui/Heading";
+import { SelectedPageContext } from "contexts/SelectedPageContext";
+import { useContext } from "react";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const ContactUs = ({ setSelectedPage }: Props) => {
+const ContactUs = () => {
+  const { setSelectedPage } = useContext(SelectedPageContext);
   const {
     register,
     trigger,

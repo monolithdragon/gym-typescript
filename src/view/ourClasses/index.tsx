@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import Heading from "components/ui/Heading";
 import classes from "./classes";
 import Class from "./Class";
+import { SelectedPageContext } from "contexts/SelectedPageContext";
+import { useContext } from "react";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const OurClasses = ({ setSelectedPage }: Props) => {
+const OurClasses = () => {
+  const { setSelectedPage } = useContext(SelectedPageContext);
   return (
     <section id="ourclasses" className="w-full bg-primary-100 py-40">
       <motion.div

@@ -11,7 +11,7 @@ const Footer = () => {
             dolores! Dicta nulla modi nostrum labore reiciendis, qui eius. Autem
             laudantium modi soluta eligendi nisi id tenetur consequuntur.
           </p>
-          <p className="">&copy; Evogym All Rights Reserved.</p>
+          <p>&copy; Evogym All Rights Reserved.</p>
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Links</h4>
